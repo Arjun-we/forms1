@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Submissions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    h1 { margin-top: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #e0e6ef;
+      padding: 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eef3ff;
+    }
+    .empty {
+      padding: 1rem;
+      background: #fff8e1;
+      border: 1px solid #ffe2a8;
+      border-radius: 8px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #2f6fed;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Submitted Feedback</h1>
+
+    <% if (submissions.length === 0) { %>
+      <div class="empty">No submissions yet. Please submit the form first.</div>
+    <% } else { %>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Feedback</th>
+            <th>Submitted At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through all in-memory submissions and render each row -->
+          <% submissions.forEach((item, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= item.name %></td>
+              <td><%= item.email %></td>
+              <td><%= item.course %></td>
+              <td><%= item.feedback %></td>
+              <td><%= item.submittedAt %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+
+    <a href="/">← Back to feedback form</a>
+  </div>
+</body>
+</html>
