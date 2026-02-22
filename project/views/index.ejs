@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 620px;
+      margin: auto;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    h1 { margin-top: 0; }
+    .field { margin-bottom: 1rem; }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #d7dce5;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    button {
+      background: #2f6fed;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover { background: #255dca; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Student Feedback Form</h1>
+    <form action="/submit" method="POST">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <div class="field">
+        <label for="course">Course</label>
+        <input id="course" name="course" type="text" required />
+      </div>
+
+      <div class="field">
+        <label for="feedback">Feedback</label>
+        <textarea id="feedback" name="feedback" required></textarea>
+      </div>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+</body>
+</html>
